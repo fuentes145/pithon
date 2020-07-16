@@ -12,9 +12,9 @@ costo_vieja = 65000
 
 precio_venta = [18000, 16990, 15000]
 
-unidades_ferreterias = [10,20,35]
+unidades_ferreterias = [10,20,50]
 
-n_ferreterias = [25,100,1000]
+n_ferreterias = [25,100,1500]
 
 inversion_inicial = 8000000
 p= [0,0,0]
@@ -25,9 +25,10 @@ for i in range (3):
         p[i] = unidades_ferreterias[i] * n_ferreterias[i] * (precio_venta[i]-costo_con_manofactura[i]) 
 
 p.insert(0,0)
-p.pop()
+p.insert(3,300*M)
 
-e = [-5*M,-1.5*M,10*M]
+
+e = [-5*M,-1.5*M,120*M,470*M]
 print(p)
 print(e)
 def Pe(p, e):
@@ -56,7 +57,7 @@ def interpolar (x, y):
  
   return A
 
-X = [0,3,12]
+X = [0,3,12,34,60]
 
 A = interpolar(X, Pe(p, e))
  
